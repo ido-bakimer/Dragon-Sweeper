@@ -1,11 +1,10 @@
 body{
   text-align: center;
-  font-family: cursive;
   background-image: url(../img/boneFire.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: 1s;
 }
 
 table{
