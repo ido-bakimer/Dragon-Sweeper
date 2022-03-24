@@ -17,7 +17,7 @@ var gLevel;
 var gGame;
 var gIntreval;
 var gMinesLocations;
-var gMusic = new Audio('/sounds/vordtOfBoreal.mp3');
+var gMusic = new Audio('sounds/vordtOfBoreal.mp3');
 
 function initGame() {
     gLevel = startGame()
@@ -89,20 +89,21 @@ function cellClicked(location, elCell) {
             for (var i = 0; i < gGame.hearts; i++) {
                 heartsStr += HEARTS + ' '
             }
-            var audio = new Audio('/sounds/hurt.mp3');
+            var audio = new Audio('sounds/hurt.mp3');
             audio.play();
             elHeartsSpan.innerText = heartsStr
-            // // elKnight.innerText = DEAD
-            // setTimeout(function () {
-            //     if (gGame.isOn) elKnight.innerText = DEFAULTEMOTE;
-            // }, 1000)
+            // elKnight.innerText = DEAD
+            setTimeout(function () {
+                if (gGame.isOn) elKnight.innerText = DEFAULTEMOTE;
+            }, 1300)
         }
     }
 
     if (gGame.markedCount + gGame.shownCount === gLevel.size ** 2) {
         winGame()
     }
-    openNegs(location)
+    showNegs(location)
+    // openNegs(location)
     // showNegsRecurs(location)
     elCell.id = 'shown'
     renderCell(location, (currCell.minesAroundCount === 0) ? '' : currCell.minesAroundCount);
@@ -152,7 +153,7 @@ function loseGame() {
     elLooser.style.display = 'block'
     var elKnight = document.querySelector('.knight')
     elKnight.innerText = DEAD;
-    var audio = new Audio('/sounds/lose.mp3');
+    var audio = new Audio('sounds/lose.mp3');
     audio.play();
 }
 
@@ -174,7 +175,7 @@ function winGame() {
     elWinner.style.display = 'block'
     var elKnight = document.querySelector('.knight')
     elKnight.innerText = WIN;
-    var audio = new Audio('/sounds/victory.mp3');
+    var audio = new Audio('sounds/victory.mp3');
     audio.play();
 }
 
