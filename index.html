@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon Sweeper</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<!-- oncontextmenu="return false" -->
+
+
+<body onload="initGame(event)"  ;>
+    <div class="platform">
+        <div class="hearts"><span>❤️❤️❤️</span></div>
+        <button class="knight" onclick="reset()">😊</button>
+        <div class="highscore">highscore:(pending) <span></span></div>
+        <button onclick="startGame(4,2)">level 1 (4x4)</button>
+        <button onclick="startGame(8,12)">level 2 (8x8)</button>
+        <button onclick="startGame(12,30)">level 3 (12x12)</button>
+        <button class="undo" onclick="undo()">undo(pending)</button>
+        <button class="safe" onclick="safeClick()">reveal secrets:(pending) <span>🧙🧙🧙</span></button>
+        <button class="hint" onclick="hintModeOn()">send sir solair to scout:(pending) <span>☀️☀️☀️</span></button>
+        <button class="sevenBoom" onclick="sevenBoom(this)">shababoom(pending)</button>
+        <button class="manual" onclick="manual(this)">Lin manual miranda(pending)</button>
+    </div>
+
+    <table>
+        <tbody class="board-container"></tbody>
+    </table>
+
+    <div class="timer">timer</div>
+    <h2>FOES VANQUISHED</h2>
+    <h3>YOU DIED</h3>
+
+    <script src="js/util.js"></script>
+    <script src="js/mines.js"></script>
+    <script src="js/game.js"></script>
+</body>
+
+</html>
